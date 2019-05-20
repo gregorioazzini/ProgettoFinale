@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,17 @@ import { Observable } from 'rxjs';
 export class AppComponent {
   title = 'Mono-officine';
 
-constructor(public http : HttpClient) { }
 
-  onClick(nome: HTMLInputElement, cognome : HTMLInputElement, username : HTMLInputElement, password : HTMLInputElement, cartacredito: HTMLInputElement ) : boolean
+
+constructor(private http: HttpClientModule) {
+
+ }
+
+ onClick(nome: HTMLInputElement, cognome : HTMLInputElement, username : HTMLInputElement, password : HTMLInputElement, cartacredito: HTMLInputElement ) : boolean
   {
     console.log(nome, cognome, username, password, cartacredito);
+
     return false;
   }
+
 }
