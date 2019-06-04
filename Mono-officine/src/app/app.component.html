@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-
+<a routerLink="/login" routerLinkActive="active" (click)='onlogin()'>Login</a>
 <div style="text-align:center">
   <h1>
     Monopattini elettrici
@@ -15,7 +15,15 @@
 
     <button (click)= "onClick(nome,cognome,username,password,cartacredito)"> Invia </button>
 
-  </form>
 
+  </form>
 </div>
 
+<router-outlet *ngIf="login"></router-outlet>
+
+<div *ngIf="mostra">
+<app-registrazione >
+</app-registrazione>
+
+<app-mappa></app-mappa>
+</div>
